@@ -20,6 +20,13 @@ The large phone and tablet sizes were simulated on the same AVD with `adb shell 
 |---|---|
 | <img src="screenshots/login_land.png" width="420"> | <img src="screenshots/profile_land.png" width="420"> |
 
+### Layout Inspector
+
+The Profile screen in Android Studio's Layout Inspector: the Component Tree shows every View as a direct
+child of the single `ConstraintLayout` (flat hierarchy), and Attributes shows the selected View's real position and size in dp.
+
+<img src="screenshots/layout_inspector.png" width="860">
+
 ## Requirements
 
 | ID | Requirement | Implementation |
