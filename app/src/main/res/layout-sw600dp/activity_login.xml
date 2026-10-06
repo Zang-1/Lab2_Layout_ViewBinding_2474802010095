@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Tablet (sw600dp): form rộng tối đa 400dp, căn giữa màn hình.
-     0dp + constraintWidth_max: View giãn theo neo nhưng không vượt quá 400dp.
-     Toàn bộ nội dung là một chain dọc packed nên cả khối được căn giữa theo chiều dọc. -->
+<!-- Tablet (sw600dp): the form is at most 400dp wide, centered on screen.
+     0dp + constraintWidth_max: Views stretch between their constraints but never beyond 400dp.
+     All content is one packed vertical chain, so the whole block is vertically centered. -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"

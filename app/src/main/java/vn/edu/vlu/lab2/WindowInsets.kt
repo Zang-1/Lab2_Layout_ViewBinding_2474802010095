@@ -5,8 +5,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 /**
- * App chạy edge-to-edge (bắt buộc từ targetSdk 35), nên phải tự chừa chỗ cho
- * thanh trạng thái, thanh điều hướng và bàn phím, nếu không nội dung sẽ bị che.
+ * The app runs edge-to-edge (enforced from targetSdk 35), so it must leave room for
+ * the status bar, navigation bar and keyboard itself, otherwise content gets covered.
  */
 fun View.applySystemBarsPadding() {
     ViewCompat.setOnApplyWindowInsetsListener(this) { v, insets ->

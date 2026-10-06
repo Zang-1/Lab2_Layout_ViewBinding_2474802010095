@@ -33,18 +33,18 @@ class LoginActivity : AppCompatActivity() {
 
         binding.cbShowPassword.setOnCheckedChangeListener { _, isChecked ->
             binding.edtPassword.transformationMethod =
-                if (isChecked) null                                  // hiện ký tự
+                if (isChecked) null                                  // show characters
                 else PasswordTransformationMethod.getInstance()
-            binding.edtPassword.setSelection(binding.edtPassword.length()) // giữ con trỏ cuối
+            binding.edtPassword.setSelection(binding.edtPassword.length()) // keep cursor at the end
         }
     }
 
     private fun handleLogin() {
-        // TextInputEditText.text có thể null => dùng ?. và orEmpty()
+        // TextInputEditText.text is nullable => use ?. and orEmpty()
         val email = binding.edtEmail.text?.toString().orEmpty().trim()
         val password = binding.edtPassword.text?.toString().orEmpty().trim()
 
-        // Xóa thông báo lỗi của lần bấm trước
+        // Clear errors from the previous attempt
         binding.tilEmail.error = null
         binding.tilPassword.error = null
 
@@ -58,7 +58,7 @@ class LoginActivity : AppCompatActivity() {
             password.length < 6 ->
                 binding.tilPassword.error = getString(R.string.err_password_short)
             else -> {
-                // Xác thực GIẢ LẬP: chưa gọi máy chủ. Xác thực thật ở các buổi sau.
+                // MOCK authentication: no server call yet. Real authentication comes in later labs.
                 binding.tvStatus.text = getString(R.string.status_login_ok, email)
                 val intent = Intent(this, ProfileActivity::class.java)
                 intent.putExtra(ProfileActivity.EXTRA_EMAIL, email)

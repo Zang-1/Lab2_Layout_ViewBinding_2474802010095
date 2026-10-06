@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Profile xoay ngang: Guideline dọc 35%.
-     Cột trái: avatar 1:1 + tên + vai trò (chain dọc packed, căn giữa).
-     Cột phải: 4 dòng nhãn | giá trị (Barrier) + chain hai nút. -->
+<!-- Landscape profile: vertical Guideline at 35%.
+     Left column: 1:1 avatar + name + role (packed vertical chain, centered).
+     Right column: 4 label | value rows (Barrier) + chain of two buttons. -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -20,7 +20,7 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.35" />
 
-        <!-- Cột trái -->
+        <!-- Left column -->
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/imgAvatar"
             android:layout_width="140dp"
@@ -65,7 +65,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvFullName" />
 
-        <!-- Cột phải -->
+        <!-- Right column -->
         <androidx.constraintlayout.widget.Barrier
             android:id="@+id/barrierLabel"
             android:layout_width="wrap_content"

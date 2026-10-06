@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "vn.edu.vlu.lab2"   // bắt buộc từ Android Gradle Plugin 8.0
+    namespace = "vn.edu.vlu.lab2"   // required since Android Gradle Plugin 8.0
     compileSdk {
         version = release(37)
     }

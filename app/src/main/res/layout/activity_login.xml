@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- ScrollView bọc ngoài để màn hình không bị cắt khi bàn phím hiện lên hoặc xoay ngang.
-     Bên trong vẫn là MỘT ConstraintLayout phẳng: mọi View là con trực tiếp.
-     Chuỗi neo dọc: imgLogo → tvTitle → tilEmail → tilPassword → cbShowPassword
+<!-- The outer ScrollView keeps the screen from being cut off when the keyboard opens or the device rotates.
+     Inside is still ONE flat ConstraintLayout: every View is a direct child.
+     Vertical constraint chain: imgLogo → tvTitle → tilEmail → tilPassword → cbShowPassword
      → btnLogin → tvStatus → tvForgotPassword -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Xoay ngang: Guideline dọc 40% chia màn hình làm hai.
-     Nửa trái: logo + tiêu đề (chain dọc packed, căn giữa). Nửa phải: form.
-     Giữ nguyên toàn bộ id như bản dọc để lớp ActivityLoginBinding không đổi kiểu. -->
+<!-- Landscape: a vertical Guideline at 40% splits the screen in two.
+     Left half: logo + title (packed vertical chain, centered). Right half: the form.
+     All ids match the portrait layout so the ActivityLoginBinding class keeps the same types. -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -20,7 +20,7 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.4" />
 
-        <!-- Nửa trái -->
+        <!-- Left half -->
         <ImageView
             android:id="@+id/imgLogo"
             android:layout_width="96dp"
@@ -48,7 +48,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/imgLogo" />
 
-        <!-- Nửa phải: form -->
+        <!-- Right half: form -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilEmail"
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"

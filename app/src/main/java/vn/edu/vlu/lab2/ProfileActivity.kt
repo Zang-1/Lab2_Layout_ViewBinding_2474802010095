@@ -22,7 +22,7 @@ class ProfileActivity : AppCompatActivity() {
         binding.btnEdit.setOnClickListener {
             Toast.makeText(this, R.string.msg_edit_coming_soon, Toast.LENGTH_SHORT).show()
         }
-        binding.btnLogout.setOnClickListener { finish() }   // quay lại màn hình Login
+        binding.btnLogout.setOnClickListener { finish() }   // back to the Login screen
     }
 
     companion object {

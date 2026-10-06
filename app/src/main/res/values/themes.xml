@@ -6,7 +6,7 @@
 
     <style name="Theme.Lab2_Layout_ViewBinding" parent="Base.Theme.Lab2_Layout_ViewBinding" />
 
-    <!-- Bo tròn 50% cho ShapeableImageView => avatar hình tròn -->
+    <!-- 50% corner radius on ShapeableImageView => circular avatar -->
     <style name="ShapeAppearance.Lab2.Circle" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
