@@ -16,6 +16,10 @@ The large phone and tablet sizes were simulated on the same AVD with `adb shell 
 |---|---|
 | <img src="screenshots/login.png" width="260"> | <img src="screenshots/profile.png" width="260"> |
 
+| Sign in – landscape | Profile – landscape |
+|---|---|
+| <img src="screenshots/login_land.png" width="420"> | <img src="screenshots/profile_land.png" width="420"> |
+
 ## Requirements
 
 | ID | Requirement | Implementation |
