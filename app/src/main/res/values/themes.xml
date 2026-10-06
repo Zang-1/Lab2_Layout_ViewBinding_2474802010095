@@ -1,0 +1,14 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Lab2_Layout_ViewBinding" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+    </style>
+
+    <style name="Theme.Lab2_Layout_ViewBinding" parent="Base.Theme.Lab2_Layout_ViewBinding" />
+
+    <!-- Bo tròn 50% cho ShapeableImageView => avatar hình tròn -->
+    <style name="ShapeAppearance.Lab2.Circle" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+</resources>
