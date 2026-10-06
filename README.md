@@ -9,13 +9,17 @@ The app has two screens, **Sign in** and **User Profile**, built entirely with a
 
 ## Screenshots
 
-| Sign in | Profile | Layout Inspector |
-|---|---|---|
-| ![Login](screenshots/login.png) | ![Profile](screenshots/profile.png) | ![Layout Inspector](screenshots/layout_inspector.png) |
-
-| Landscape | Tablet (sw600dp) |
+| Sign in | Profile |
 |---|---|
-| ![Landscape](screenshots/login_land.png) | ![Tablet](screenshots/login_tablet.png) |
+| <img src="screenshots/login.png" width="300"> | <img src="screenshots/profile.png" width="300"> |
+
+| Landscape (`layout-land`) |
+|---|
+| <img src="screenshots/login_land.png" width="620"> |
+
+| Tablet (`layout-sw600dp`) |
+|---|
+| <img src="screenshots/login_tablet.png" width="620"> |
 
 ## Requirements
 
