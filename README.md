@@ -9,17 +9,12 @@ The app has two screens, **Sign in** and **User Profile**, built entirely with a
 
 ## Screenshots
 
+All screenshots were taken on the **Small_Phone** AVD (720×1280, 360×640dp, Android 17).
+The large phone and tablet sizes were simulated on the same AVD with `adb shell wm size` / `wm density`.
+
 | Sign in | Profile |
 |---|---|
-| <img src="screenshots/login.png" width="300"> | <img src="screenshots/profile.png" width="300"> |
-
-| Landscape (`layout-land`) |
-|---|
-| <img src="screenshots/login_land.png" width="620"> |
-
-| Tablet (`layout-sw600dp`) |
-|---|
-| <img src="screenshots/login_tablet.png" width="620"> |
+| <img src="screenshots/login.png" width="260"> | <img src="screenshots/profile.png" width="260"> |
 
 ## Requirements
 
@@ -48,6 +43,7 @@ The app has two screens, **Sign in** and **User Profile**, built entirely with a
 - [x] Material 3 `TextInputLayout` + `TextInputEditText`, with an eye icon for the password (`app:endIconMode="password_toggle"`).
 - [x] Layouts are wrapped in a `ScrollView`; since the app runs edge-to-edge, `WindowInsets.kt` leaves room for the system bars **and the keyboard**, so the form is never covered while typing.
 - [x] `res/layout-sw600dp/activity_login.xml`: the form is at most 400dp wide (`layout_constraintWidth_max`) and centered.
+  `res/layout-sw600dp/activity_profile.xml` keeps the profile details between two Guidelines (20% / 80%).
 
 ## Project structure
 
@@ -58,6 +54,7 @@ app/src/main/
 │   ├── ProfileActivity.kt      # receives the email via Intent, Sign out = finish()
 │   └── WindowInsets.kt         # padding for status bar / navigation bar / keyboard
 └── res/
+    ├── drawable-nodpi/ic_logo.png  # VLU logo
     ├── layout/                 # phone, portrait
     ├── layout-land/            # phone, landscape
     ├── layout-sw600dp/         # tablet
@@ -67,14 +64,27 @@ app/src/main/
 
 ## Testing
 
-| Case | Input | Expected result |
-|---|---|---|
-| Empty | Empty email or password | Toast “Please enter your email and password”, status reports missing data |
-| Invalid email | `abc@` / `123456` | “Invalid email address” under the Email field |
-| Short password | `sv@vlu.edu.vn` / `123` | “Password must be at least 6 characters” |
-| Valid | `sv@vlu.edu.vn` / `123456` | “Signed in successfully: sv@vlu.edu.vn”, Profile opens showing the email |
+The four cases from section 7.1 of the lab:
 
-Responsive matrix: Pixel 4 (5"), Pixel 8 Pro, landscape, Pixel Tablet, largest font size.
+| Empty fields | Invalid email (`abc`) | Short password (`123`) | Valid (`sv01@vlu.edu.vn` / `123456`) |
+|---|---|---|---|
+| <img src="screenshots/test_1_empty.png" width="200"> | <img src="screenshots/test_2_invalid_email.png" width="200"> | <img src="screenshots/test_3_short_password.png" width="200"> | <img src="screenshots/test_4_success.png" width="200"> |
+| “Status: Please fill in all fields” + Toast | “Invalid email address” under Email | “Password must be at least 6 characters” | “Signed in successfully: sv01@vlu.edu.vn”, then Profile opens |
+
+The valid case opens the Profile screen; the last screenshot was taken after pressing Back, so the success status is visible.
+
+### Responsive test matrix (section 5.6)
+
+| Case | How | Sign in | Profile |
+|---|---|---|---|
+| Small phone | Small_Phone AVD, 360×640dp | <img src="screenshots/login.png" width="180"> | <img src="screenshots/profile.png" width="180"> |
+| Large phone | Pixel 8 Pro size, 1344×2992 @ 480dpi | <img src="screenshots/login_large_phone.png" width="180"> | <img src="screenshots/profile_large_phone.png" width="180"> |
+| Landscape | Rotated (`layout-land`) | <img src="screenshots/login_land.png" width="320"> | <img src="screenshots/profile_land.png" width="320"> |
+| Tablet | Pixel Tablet size, 1600×2560 @ 320dpi (`layout-sw600dp`) | <img src="screenshots/login_tablet.png" width="220"> | <img src="screenshots/profile_tablet.png" width="220"> |
+| Largest font | Font scale 2.0 | <img src="screenshots/login_large_font.png" width="180"> | <img src="screenshots/profile_large_font.png" width="180"> |
+
+Results: nothing overflows or overlaps; in landscape and with the largest font the screens scroll, so the
+**SIGN IN** button stays reachable; on the tablet the form is capped at 400dp and the profile is kept in a centered column.
 
 ## Running the project
 
